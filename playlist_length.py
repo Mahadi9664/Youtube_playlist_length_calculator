@@ -6,8 +6,8 @@ def playlist_length(url):
         pl = Playlist(url)
 
         len = 0
-        for p in pl.video_urls:
-            vid = YouTube(p)
+        for vid_url in pl.video_urls:
+            vid = YouTube(vid_url)
             len += vid.length
 
         print(f"hour: {len//3600}, minute: {(len%3600)//60}")
